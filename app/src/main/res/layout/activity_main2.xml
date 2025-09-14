@@ -1,32 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent"
+    tools:context=".MainActivity2">
 
-    <RelativeLayout
+    <!-- Image -->
+    <ImageView
+        android:id="@+id/imageView"
         android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/aa" />
+
+    <!-- Navigation Buttons -->
+    <LinearLayout
+        android:id="@+id/buttonLayout"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:focusableInTouchMode="true"
-        tools:context=".MainActivity2">
+        android:layout_below="@id/imageView"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp">
 
-        <ImageView
-            android:id="@+id/banner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:adjustViewBounds="true"
-            android:src="@drawable/cover"/>
+        <ImageButton
+            android:id="@+id/btnPrev"
+            android:layout_width="111dp"
+            android:layout_height="111dp"
+            android:src="@drawable/ic_prev"   />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_view"
-            tools:listitem="@layout/list_item"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:scrollbars="vertical"
-            android:layout_below="@id/banner"/>
+        <ImageButton
+            android:id="@+id/btnNext"
+            android:layout_width="111dp"
+            android:layout_height="111dp"
+            android:src="@drawable/ic_next"   />
 
-    </RelativeLayout>
-</ScrollView>
+    </LinearLayout>
 
+</RelativeLayout>
